@@ -110,7 +110,7 @@ const showMed=()=>{
             <Medicine 
              data={item}
              handleChange={handleChange}
-             isDelete={!(index+1==med.length)}
+             isDelete={!(index+1===med.length)}
              index={index}
              handleNew={handleNew}
              handleRemove={handleRemove}/>

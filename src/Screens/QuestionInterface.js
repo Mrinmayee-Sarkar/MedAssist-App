@@ -5,7 +5,6 @@ import questionimage from "../Assets/question.png"
 import { useEffect,useState } from "react"
 import { getData, postData } from "../Services/FetchDjangoServices"
 import Swal from "sweetalert2"
-import { useSelector } from "react-redux"
 
 const useStyles=makeStyles((theme)=>({
     container: {

@@ -8,11 +8,17 @@ import PatientDashboard from "./Screens/Patientdashboard";
 import PatientLogin from "./Screens/PatientLogin";
 import Prescription from "./Screens/Prescription";
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
+import Navbar from "./Screens/Navbar";
 
 function App() {
   
   return (<div>
     <Router>
+    <Navbar>
+
+    </Navbar>
+    
+    
       <Routes>
         <Route element={<TimingsInterface/>} path='/timingsinterface'/>
         <Route element={<DisplayTiming/>} path='/displaytiming'/>

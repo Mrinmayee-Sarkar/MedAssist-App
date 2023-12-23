@@ -5,7 +5,7 @@ import { TimePicker } from '@mui/x-date-pickers/TimePicker'
 import makeStyles from "@mui/styles/makeStyles"
 import TimeHeading from "../Component/TimeHeading"
 import { useState } from "react";
-import { postData,serverURL} from "../Services/FetchDjangoServices";
+import { postData} from "../Services/FetchDjangoServices";
 import Swal from "sweetalert2";
 import moment from "moment/moment"
 import dayjs from "dayjs";
@@ -36,19 +36,19 @@ const handleError=(error,label)=>{
     setFormError((prev)=>({...prev,[label]:error}))}
 const isError=()=>{
     var error=false
-    if(doctorid.length==0)
+    if(doctorid.length===0)
     { handleError('Doctor ID Should Not Be Blank','doctorid')
       error=true}
-    if(status.length==0)
+    if(status.length===0)
     { handleError('Select Status','status')
       error=true}
-    if(starttiming.length==0)
+    if(starttiming.length===0)
     { handleError('Enter Start Timing','starttiming')
       error=true}
-    if(endtiming.length==0)
+    if(endtiming.length===0)
     { handleError('Enter End Timing','endtiming')
       error=true}
-    if(days.length==0)
+    if(days.length===0)
     { handleError('Select days','days')
       error=true}
     return error}

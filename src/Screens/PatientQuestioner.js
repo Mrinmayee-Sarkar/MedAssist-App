@@ -1,7 +1,7 @@
 import makeStyles from "@mui/styles/makeStyles";
 import Options from "../Component/Options";
 import { useState,useEffect } from "react";
-import { getData, postData,imageURL } from "../Services/FetchDjangoServices";
+import {postData,imageURL } from "../Services/FetchDjangoServices";
 import { Button } from "@mui/material";
 import { NavigateBefore } from "@mui/icons-material";
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
@@ -72,15 +72,15 @@ var answers=useSelector((state)=>state.answer)
 var patientdata=Object.values(patient)[0] 
 const[doctorId,setDoctorID]=useState(doctor.id)
 const[patientId,setPatientID]=useState(patientdata.EmailId)
-const[ansdata,setAnsData]=useState({})
 const fetchALLQuestions=async ()=>{
     var body={doctorid:doctor.id}
     var result=await postData("doctorquestions",body )
     console.log(result.data[0])
     setQuestion(result.data)}
 
-    useEffect(function(){
-        fetchALLQuestions()},[])
+    useEffect( function(){
+        fetchALLQuestions()
+      },[])
 
 const handleNext=(i,mq,sq)=>{
    var i=index+1

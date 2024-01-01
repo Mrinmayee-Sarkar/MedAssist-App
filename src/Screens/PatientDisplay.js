@@ -1,5 +1,5 @@
 import MaterialTable from "@material-table/core"
-import { getData, postData } from "../Services/FetchDjangoServices"
+import { postData } from "../Services/FetchDjangoServices"
 import { useEffect, useState } from "react"
 import  makeStyles  from "@mui/styles/makeStyles"
 import { useNavigate } from "react-router-dom"
@@ -45,13 +45,11 @@ const useStyles=makeStyles((theme)=>({
 }))
 export default function PatientDisplay(){
 const[patientlist,setPatientList]=useState([])
-const[ans,setAns]=useState([])
 const [open,setOpen]=useState(false)
 const [selectedPatient,setSelectedPatient]=useState({})
 var doctor=JSON.parse(localStorage.getItem("DOCTOR"))
 var classes=useStyles()
 var navigate=useNavigate()
-
 
 const handleQuestions=(rowData)=>{
 setSelectedPatient(rowData)
@@ -83,7 +81,7 @@ const fetchAllPatients= async()=>{
  
  const putAnswers=(data)=>{
 //console.log("MMMMMMMMMMMMMMMMMMMMM",typeof(data))
-if (data!=undefined){
+if (data!==undefined){
   return Object.values(JSON.parse(data))?.map((item,i)=>{
     return(
       <tr>

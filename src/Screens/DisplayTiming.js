@@ -1,7 +1,7 @@
 import {useEffect,useState,} from 'react'
 import makeStyles from "@mui/styles/makeStyles";
 import MaterialTable from '@material-table/core';
-import { getData,serverURL,postData } from '../Services/FetchDjangoServices';
+import { getData,postData } from '../Services/FetchDjangoServices';
 import * as React from 'react';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -18,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
   rootcontainer: {
     width: "auto",
     height: "auto",
-    
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -62,28 +61,26 @@ const handleError=(error,label)=>{
     setFormError((prev)=>({...prev,[label]:error}))}
 const isError=()=>{
     var error=false
-    if(doctorid.length==0)
+    if(doctorid.length===0)
     { handleError('Doctor ID Should Not Be Blank','doctorid')
       error=true}
-    if(status.length==0)
+    if(status.length===0)
     { handleError('Select Status','status')
       error=true}
-    if(starttiming.length==0)
+    if(starttiming.length===0)
     { handleError('Enter Start Timing','starttiming')
       error=true}
-    if(endtiming.length==0)
+    if(endtiming.length===0)
     { handleError('Enter End Timing','endtiming')
       error=true}
-    if(days.length==0)
+    if(days.length===0)
     { handleError('Select days','days')
       error=true}
     return error}
 
 const handleEndTime=(event)=>{
-  //var t =(moment(new Date(event)).format("hh:mm A"));
     setEndTiming(event)}
 const handleStartTime=(event)=>{
- // var t =(moment(new Date(event)).format("hh:mm A"));
     setStartTiming(event)}
 
 const handleDays=(event)=>{
@@ -112,8 +109,8 @@ const handleDelete=async(rowData)=>{
           }).then(async(result) => {
             if (result.isConfirmed) {
               var body={'id':rowData.id}
-              var result=await postData('timingdelete',body)
-              if (result.status){
+              var result1=await postData('timingdelete',body)
+              if (result1.status){
                 Swal.fire('Deleted!'," ","success")
                 fetchAllTiming()}
                 else{
@@ -194,7 +191,7 @@ const handleSubmit = async()=>{
                             control={<Radio/>}
                             value='Available'
                             label='Available'
-                            checked={status=='Available'?true:false}
+                            checked={status==='Available'?true:false}
                             onChange={(event)=>setStatus(event.target.value)} />
                             <FormControlLabel 
                             error={FormError.status}
@@ -202,7 +199,7 @@ const handleSubmit = async()=>{
                             control={<Radio/>}
                             label='Not-Available'
                             value='Not-Available'
-                            checked={status=='Not-Available'?true:false}
+                            checked={status==='Not-Available'?true:false}
                             onChange={(event)=>setStatus(event.target.value)} />
                             </RadioGroup>
                             {FormError.status? <FormHelperText style={{color:'red'}}>{FormError.status}</FormHelperText>:<></>}

@@ -7,7 +7,6 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import { useNavigate,Routes,Route } from 'react-router-dom';
 import ListOfDoctors from "./ListOfDoctors";
-import adminimage from"../Assets/abhay.jpeg"
 import SearchIcon from '@mui/icons-material/Search';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
@@ -41,7 +40,7 @@ const appBar=()=>{
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static" style={{background:"#22a6b3"}}>
           <Toolbar>
-        <div style={{fontWeight:"bold",fontSize:30}}>Medassist</div>
+        <div style={{fontWeight:"bold",fontSize:17}}>Helpline no: 8987676545</div>
         <div style={{width:550,background:'#ffff',marginLeft:"25%",borderRadius:5,padding:2}}> 
         <TextField 
         onChange={(event)=>setPattern(event.target.value)}
@@ -73,11 +72,11 @@ const sideBar=()=>{
 
    
   <Paper elevation={3} style={{display:"flex",width:200,borderRadius:20,margin:10,alignItems:"center",padding:10,flexDirection:"column"}}>
-    <div><img src={adminimage} style={{width:100,height:100, borderRadius:10}}></img>
+    <div>
     </div>
-    <div style={{fontWeight:14, fontWeight:"bold"}}>{value.PatientName}</div>
-    <div style={{fontWeight:10, fontWeight:300}}>+91{value.Mobileno}</div>
-    <div style={{fontWeight:10, fontWeight:300}}>{value.EmailId}</div>
+    <div style={{fontSize:20, fontWeight:"bold"}}>{value.PatientName}</div>
+    <div style={{fontSize:17, fontWeight:300}}>+91{value.Mobileno}</div>
+    <div style={{fontSize:17, fontWeight:300}}>{value.EmailId}</div>
     <div>{menubar()}</div>
     
     

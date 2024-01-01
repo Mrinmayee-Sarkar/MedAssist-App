@@ -41,7 +41,7 @@ useEffect(function () {
     fetchAllDoctors()},[])
 
 const SearchDoctors=()=>{
-    if(props.pattern.length!=0){
+    if(props.pattern.length!==0){
     const data=doctors.filter((item)=>{
         return  item.doctorname.includes(props.pattern)
     })
@@ -58,7 +58,7 @@ const showDoctors=()=>{
 })
 }
 const handleDoctor=()=>{
-    if (selectedDoctor==-1){
+    if (selectedDoctor===-1){
         Swal.fire({
             icon: 'error',
             title: 'Oops...',

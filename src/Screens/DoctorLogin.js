@@ -22,44 +22,39 @@ function Copyright(props: any) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        MedaAssist Ltd.
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
   );
 }
-
-// TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
-
-export default function DoctorLogin(){
-  const[emailId,setEmailID]=React.useState("ak@gmail.com")
-  const[password,setPassword]=React.useState('Akshay Kumar##')
-    var navigate=useNavigate()
-    const handleSubmit =async (event) => {
-      
-      var response= await postData('doctorlogin',{emailid:emailId,password:password})
-      if (response.status){
-        navigate("/doctordashboard")
-        console.log("xxxxxx",response.data[0]) 
-        localStorage.setItem('DOCTOR',JSON.stringify(response.data[0]))
-        console.log("xxxxxx",response.data[0]) 
-}
-else{
-  Swal.fire({
-    position: 'center',
-    icon: 'error',
-    title: "Invalid Login",
-    showConfirmButton: false,
-    timer: 2000
-})
-
-}}
-    
-    return(
-        <ThemeProvider theme={defaultTheme}>
+export default function DoctorLogin() {
+  const [emailId, setEmailID] = React.useState()
+  const [password, setPassword] = React.useState()
+  var navigate = useNavigate()
+  const handleSubmit = async (event) => {
+    var response = await postData('doctorlogin', { emailid: emailId, password: password })
+    if (response.status) {
+      navigate("/doctordashboard")
+      console.log("xxxxxx", response.data[0])
+      localStorage.setItem('DOCTOR', JSON.stringify(response.data[0]))
+      console.log("xxxxxx", response.data[0])
+    }
+    else {
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: "Invalid Login",
+        showConfirmButton: false,
+        timer: 2000
+      })
+    }
+  }
+  return (
+    <ThemeProvider theme={defaultTheme}>
       <Grid container component="main" sx={{ height: '100vh' }}>
         <CssBaseline />
         <Grid
@@ -103,7 +98,7 @@ else{
                 name="email"
                 autoComplete="email"
                 autoFocus
-                onChange={(event)=>setEmailID(event.target.value)}
+                onChange={(event) => setEmailID(event.target.value)}
               />
               <TextField
                 margin="normal"
@@ -115,7 +110,7 @@ else{
                 type="password"
                 id="password"
                 autoComplete="current-password"
-                onChange={(event)=>setPassword(event.target.value)}
+                onChange={(event) => setPassword(event.target.value)}
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
@@ -137,7 +132,6 @@ else{
                 </Grid>
                 <Grid item>
                   <Link href="/patientinterface" variant="body2">
-                    {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
               </Grid>
@@ -147,6 +141,5 @@ else{
         </Grid>
       </Grid>
     </ThemeProvider>
-
-    )
+  )
 }

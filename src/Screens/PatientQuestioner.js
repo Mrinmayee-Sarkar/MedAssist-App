@@ -75,7 +75,7 @@ const[patientId,setPatientID]=useState(patientdata.EmailId)
 const fetchALLQuestions=async ()=>{
     var body={doctorid:doctor.id}
     var result=await postData("doctorquestions",body )
-    console.log(result.data[0])
+    console.log("QQQQQQQQQQQQQQQ",result.data)
     setQuestion(result.data)}
 
     useEffect( function(){

@@ -3,6 +3,8 @@ import makeStyles from "@mui/styles/makeStyles";
 import { useSelector } from "react-redux";
 import { imageURL } from "../Services/FetchDjangoServices";
 import { useNavigate } from "react-router-dom";
+import ListOfDoctors from "./ListOfDoctors";
+import { Route,Routes } from "react-router-dom";
 const useStyles=makeStyles((theme)=>({
    container: {
         width:"100v%",
@@ -93,7 +95,13 @@ export default function SelectedDoctor() {
                  <Grid item xs={11}>
                  <div style={{display:'flex',marginBottom:10,color:'#154360',fontWeight:'bold',fontSize:30}}>
                  Dr.{doctor.doctorname}</div>
-            <div><Button style={{ variant:"contained" ,borderRadius:100,background:"#22a6b3",height:40,color:'#ffff',fontSize:15,paddingLeft:30,paddingRight:30}}>Change Doctor</Button></div>
+            <div><Button onClick={()=>navigate("/patientdashboard")} style={{ variant:"contained" ,borderRadius:100,background:"#22a6b3",height:40,color:'#ffff',fontSize:15,paddingLeft:30,paddingRight:30}}>Change Doctor</Button></div>
+            <Grid item xs={10}>
+                <Routes>
+                <Route element={<ListOfDoctors/>} path='/listofdoctors'/>
+                </Routes>
+            </Grid>
+
         </Grid>
         </Grid>
         </div>

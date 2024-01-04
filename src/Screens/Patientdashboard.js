@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { AppBar,Toolbar,Box,IconButton,Paper,Grid, TextField,InputAdornment } from '@mui/material';
-import  LogoutRounded from  '@mui/icons-material/LogoutRounded';
+import { AppBar,Toolbar,Box,Paper,Grid, TextField,InputAdornment } from '@mui/material';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -17,7 +16,7 @@ import PatientLogin from './PatientLogin';
 export default function PatientDashboard(){
   var patient=useSelector((state)=>state.patient)
   var value=Object.values(patient)[0]
-  console.log(value)
+  console.log("mmmmmmmmmmmm",value)
   var[pattern,setPattern]=useState('')
   var [status,setStatus]=useState(true)
   var Navigate=useNavigate()
@@ -55,12 +54,7 @@ const appBar=()=>{
             </InputAdornment>
           ),
         }}/>
-        
-        
-        </div>
-        <IconButton color="inherit" style={{marginLeft:'auto',}}>
-          <LogoutRounded/>
-        </IconButton>
+         </div>
         </Toolbar>
         </AppBar>
         </Box>);}
@@ -69,18 +63,14 @@ const sideBar=()=>{
   return(
     <Grid container spacing={3}>
       <Grid item xs={2}>
-
-   
-  <Paper elevation={3} style={{display:"flex",width:200,borderRadius:20,margin:10,alignItems:"center",padding:10,flexDirection:"column"}}>
+ <Paper elevation={3} style={{display:"flex",width:200,borderRadius:20,margin:10,alignItems:"center",padding:10,flexDirection:"column"}}>
     <div>
     </div>
     <div style={{fontSize:20, fontWeight:"bold"}}>{value.PatientName}</div>
     <div style={{fontSize:17, fontWeight:300}}>+91{value.Mobileno}</div>
     <div style={{fontSize:17, fontWeight:300}}>{value.EmailId}</div>
     <div>{menubar()}</div>
-    
-    
-  </Paper>
+   </Paper>
   </Grid>
   <Grid item xs={10}>
   {status?< ListOfDoctors pattern={pattern} setStatus={setStatus}/>:<></>}
@@ -89,20 +79,16 @@ const sideBar=()=>{
           <Route element={<ListOfDoctors/>} path='/listofdoctors'/>
           <Route element={<SelectedDoctor/>} path='/selecteddoctor'/>
           <Route element={<PatientQuestioner/>} path='/patientquestioner'/>
-          
   </Routes>
   </Grid>
   </Grid>
   )
-
 }
 
 return(
     <div> 
       {appBar()}
       {sideBar()}
-
     </div>
-
-  
-)}
+)
+}

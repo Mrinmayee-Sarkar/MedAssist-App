@@ -53,7 +53,6 @@ var navigate=useNavigate()
 
 const handleQuestions=(rowData)=>{
 setSelectedPatient(rowData)
-//console.log("NNNN",rowData)
 setOpen(true)}
 
 const fetchAllPatients= async()=>{
@@ -76,11 +75,9 @@ const fetchAllPatients= async()=>{
  const handlePrescription=(rowData)=>{
  
   navigate("/doctordashboard/prescriptiondisplay",{state:{patient:JSON.stringify(rowData)}})
-  //console.log("Bye",{state:{patient:JSON.stringify(rowData)}})
  }
  
  const putAnswers=(data)=>{
-//console.log("MMMMMMMMMMMMMMMMMMMMM",typeof(data))
 if (data!==undefined){
   return Object.values(JSON.parse(data))?.map((item,i)=>{
     return(

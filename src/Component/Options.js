@@ -27,7 +27,8 @@ const useStyles=makeStyles((theme)=>({
 
 export default function Options(props)
 
-{var options=(props?.options).split(",") 
+{
+  var options=(props?.options).split(",") 
     const [select, setSelect] = useState(null);
     var classes=useStyles()
     const handleClick = (item,index) => {
@@ -48,7 +49,6 @@ export default function Options(props)
             >
               <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',padding:2}}>
               <div>{item}</div>
-              <div>{index}</div>
             </div></div>))
         }
        </div>

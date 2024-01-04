@@ -22,8 +22,6 @@ const useStyles=makeStyles((theme)=>({
         padding:"1%"  }
 }))
 
-
-
 export default function ListOfDoctors(props){
 const [doctor,setDoctor]=useState({})
 const [doctors,setDoctors] = useState([])
@@ -43,18 +41,19 @@ useEffect(function () {
 const SearchDoctors=()=>{
     if(props.pattern.length!==0){
     const data=doctors.filter((item)=>{
-        return  item.doctorname.includes(props.pattern)
+        return  (item.doctorname.toLowerCase()).includes(props.pattern)
     })
     setDoctors(data)
 }
 else{
     setDoctors(temp)}}
+
 useEffect(function(){
     SearchDoctors()},[props] )
 
 const showDoctors=()=>{
     return doctors.map((item,i)=>{
-        return <DoctorCard setDoctor={setDoctor} data={item} i={i} selectedDoctor={selectedDoctor} setSelectedDoctor={setSelectedDoctor}/>
+        return <DoctorCard key={item.id} setDoctor={setDoctor} data={item} i={i} selectedDoctor={selectedDoctor} setSelectedDoctor={setSelectedDoctor}/>
 })
 }
 const handleDoctor=()=>{

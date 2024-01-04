@@ -14,7 +14,7 @@ const useStyles=makeStyles((theme)=>({
         width:'100vw',
         height:'100vh',
         display:'flex',
-        background:'#00cec9',
+        background:'#fff',
         alignItems:'center',
         justifyContent:'center',},
     box:{

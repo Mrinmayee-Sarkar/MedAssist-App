@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/MedAssist-App/static/css/main.e6c13ad2.css",
-    "main.js": "/MedAssist-App/static/js/main.08d9b43d.js",
+    "main.js": "/MedAssist-App/static/js/main.2ba5318b.js",
     "static/js/787.064e4a6e.chunk.js": "/MedAssist-App/static/js/787.064e4a6e.chunk.js",
     "static/media/abhay.jpeg": "/MedAssist-App/static/media/abhay.2c4d2420013dedf5b20a.jpeg",
     "static/media/doctors.png": "/MedAssist-App/static/media/doctors.73694114f86d5167b5c0.png",
@@ -10,11 +10,11 @@
     "static/media/question.png": "/MedAssist-App/static/media/question.696d2220402db92127be.png",
     "index.html": "/MedAssist-App/index.html",
     "main.e6c13ad2.css.map": "/MedAssist-App/static/css/main.e6c13ad2.css.map",
-    "main.08d9b43d.js.map": "/MedAssist-App/static/js/main.08d9b43d.js.map",
+    "main.2ba5318b.js.map": "/MedAssist-App/static/js/main.2ba5318b.js.map",
     "787.064e4a6e.chunk.js.map": "/MedAssist-App/static/js/787.064e4a6e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.08d9b43d.js"
+    "static/js/main.2ba5318b.js"
   ]
 }

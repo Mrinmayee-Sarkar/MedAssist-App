@@ -9,10 +9,11 @@ import { postData} from "../Services/FetchDjangoServices";
 import Swal from "sweetalert2";
 import moment from "moment/moment"
 import dayjs from "dayjs";
+import Time from "../Assets/time.png"
 const useStyles=makeStyles((theme)=>({
     container:{
-        width:'100vw',
-        height:'100vh',
+        width:'83vw',
+        height:'89vh',
         display:'flex',
         background:'#fff',
         alignItems:'center',
@@ -108,7 +109,7 @@ const handleSubmit = async()=>{
                         <TimeHeading
                         color="#2d3436"
                         text='Timing Slots'
-                        icon="doctors.png"/>
+                        icon={Time}/>
                         </Grid>
                     <Grid item xs={6}>
                         <TextField 
@@ -180,51 +181,51 @@ const handleSubmit = async()=>{
                           error={FormError.days}
                           onFocus={()=>handleError("",'days')}
                           onChange={handleDays}
-                          label='Monday' 
-                          value='Monday'
-                          control={<Checkbox checked={days.includes("Monday")}/>}/>
+                          label='Mon' 
+                          value='Mon'
+                          control={<Checkbox checked={days.includes("Mon")}/>}/>
                           <FormControlLabel 
                           error={FormError.days}
                           onFocus={()=>handleError("",'days')}
                           onChange={handleDays}
-                          label="Tuesday" 
-                          value='Tuesday'
-                          control={<Checkbox checked={days.includes("Tuesday")}  />} />
+                          label="Tue" 
+                          value='Tue'
+                          control={<Checkbox checked={days.includes("Tue")}  />} />
                           <FormControlLabel 
                           error={FormError.days}
                           onFocus={()=>handleError("",'days')}
                           onChange={handleDays}
-                          label='Wednesday' 
-                          value='Wednesday'
-                          control={<Checkbox checked={days.includes("Wednesday")}/>} />
+                          label='Wed' 
+                          value='Wed'
+                          control={<Checkbox checked={days.includes("Wed")}/>} />
                           <FormControlLabel  
                           error={FormError.days}
                           onFocus={()=>handleError("",'days')}
                           onChange={handleDays}
-                          label='Thursday' 
-                          value='Thursday'
-                          control={<Checkbox checked={days.includes("Thursday")}/>} />
+                          label='Thurs' 
+                          value='Thurs'
+                          control={<Checkbox checked={days.includes("Thurs")}/>} />
                           <FormControlLabel 
                           error={FormError.days}
                           onFocus={()=>handleError("",'days')} 
                           onChange={handleDays}
-                          label='Friday' 
-                          value='Friday'
-                          control={<Checkbox checked={days.includes("Friday")}/>}/>
+                          label='Fri' 
+                          value='Fri'
+                          control={<Checkbox checked={days.includes("Fri")}/>}/>
                           <FormControlLabel  
                           error={FormError.days}
                           onFocus={()=>handleError("",'days')}
                           onChange={handleDays}
-                          label='Saturday' 
-                          value='Saturday'
-                          control={<Checkbox checked={days.includes("Saturday")}/>}/>
+                          label='Sat' 
+                          value='Sat'
+                          control={<Checkbox checked={days.includes("Sat")}/>}/>
                           <FormControlLabel 
                           error={FormError.days}
                           onFocus={()=>handleError("",'days')}
                           onChange={handleDays}
-                          label='Sunday' 
-                          value='Sunday'
-                          control={<Checkbox checked={days.includes("Sunday")}/>}/>
+                          label='Sun' 
+                          value='Sun'
+                          control={<Checkbox checked={days.includes("Sun")}/>}/>
                           </FormGroup>
                           {FormError.days? <FormHelperText style={{color:'red'}}>{FormError.days}</FormHelperText>:<></>}
                           

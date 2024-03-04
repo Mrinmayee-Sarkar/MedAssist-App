@@ -7,7 +7,7 @@ import ListOfDoctors from "./ListOfDoctors";
 import { Route,Routes } from "react-router-dom";
 const useStyles=makeStyles((theme)=>({
    container: {
-        width:"100v%",
+        width:"100%",
         height:"100%",
         background:"#fff",
         fontFamily:'Kanit',
@@ -64,12 +64,13 @@ const useStyles=makeStyles((theme)=>({
 }
 
 ))
-export default function SelectedDoctor() {
+export default function SelectedDoctor(props) {
     var classes=useStyles()
     var doctor=useSelector(state=>state.doctor)
     var navigate=useNavigate()
     const handleClick=()=>{
-        navigate("/patientdashboard/patientquestioner")
+        navigate("/patientdashboard/patientquestioner");
+        props.hideAppBar();
 
     }
  return(
@@ -95,7 +96,7 @@ export default function SelectedDoctor() {
                  <Grid item xs={11}>
                  <div style={{display:'flex',marginBottom:10,color:'#154360',fontWeight:'bold',fontSize:30}}>
                  Dr.{doctor.doctorname}</div>
-            <div><Button onClick={()=>navigate("/patientdashboard")} style={{ variant:"contained" ,borderRadius:100,background:"#22a6b3",height:40,color:'#ffff',fontSize:15,paddingLeft:30,paddingRight:30}}>Change Doctor</Button></div>
+            <div><Button onClick={()=> navigate("/patientdashboard")} style={{ variant:"contained" ,borderRadius:100,background:"#22a6b3",height:40,color:'#ffff',fontSize:15,paddingLeft:30,paddingRight:30}}>Change Doctor</Button></div>
             <Grid item xs={10}>
                 <Routes>
                 <Route element={<ListOfDoctors/>} path='/listofdoctors'/>

@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom"
 const useStyles = makeStyles((theme) => ({
     container: {
         width: "100%",
-        height: '95vh',
+        height: '92vh',
         background: '#f2f2f2',
         display: 'flex',
         justifyContent: 'center',
@@ -78,11 +78,12 @@ export default function PrescriptionDisplay() {
             <Paper className={classes.box} elevation={24} id="printableArea">
                 <Grid container spacing={2}>
                     <Grid item xs={6}>
-                        <div style={{ margin: 15, padding: 5, display: "flex", justifyContent: "left", width: 150, alignItems: "center", flexDirection: "column" }}>
+                        <div style={{ margin: 15, padding: 5, display: "flex", justifyContent: "left", width: 190, alignItems: "center", flexDirection: "column" }}>
                             <div> <Avatar alt="Remy Sharp" src={`${imageURL}${doctor?.photograph}`} sx={{ width: 80, height: 80 }} /></div>
                             <div style={{ color: '#154360', fontWeight: 'bold', fontSize: 18, fontFamily: "kanit", marginTop: "2%" }}>Dr. {doctor?.doctorname}</div>
                             <div style={{ color: '#154360', fontSize: 14, fontWeight: 400, fontFamily: "kanit", marginTop: "3%" }}>{doctor?.emailid}</div>
                             <div style={{ color: '#154360', fontSize: 14, fontWeight: 400, fontFamily: "kanit", marginTop: "4%" }}>+91{doctor?.mobileno}{" "}</div></div></Grid>
+                    
                     <Grid item xs={6}>
                         <div style={{ margin: 15, padding: 5, display: 'flex', alignItems: "flex-end", width: 330, flexDirection: "column" }}>
                             <div style={{ color: "Crimson", fontWeight: "bolder", fontSize: 20, fontFamily: 'kanit', marginTop: "2%" }}>Patient Details</div>

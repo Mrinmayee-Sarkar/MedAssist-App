@@ -16,9 +16,10 @@ import PatientLogin from './PatientLogin';
 export default function PatientDashboard(){
   var patient=useSelector((state)=>state.patient)
   var value=Object.values(patient)[0]
-  console.log("mmmmmmmmmmmm",value)
   var[pattern,setPattern]=useState('')
   var [status,setStatus]=useState(true)
+  var [showAppBar,setShowAppBar]=useState(true)
+  
   var Navigate=useNavigate()
 function menubar(){
   return (
@@ -34,14 +35,22 @@ function menubar(){
            </nav>
            </Box>)}
 
+const hideAppBar =() =>{
+  setShowAppBar(false)
+}
+
+
+
 const appBar=()=>{
   return (
+    showAppBar&&(
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static" style={{background:"#22a6b3"}}>
           <Toolbar>
         <div style={{fontWeight:"bold",fontSize:17}}>Helpline no: 8987676545</div>
         <div style={{width:550,background:'#ffff',marginLeft:"25%",borderRadius:5,padding:2}}> 
         <TextField 
+        
         onChange={(event)=>setPattern(event.target.value)}
         placeholder='Search doctor name...'
         fullWidth
@@ -57,7 +66,7 @@ const appBar=()=>{
          </div>
         </Toolbar>
         </AppBar>
-        </Box>);}
+        </Box>) )}
       
 const sideBar=()=>{
   return(
@@ -73,11 +82,11 @@ const sideBar=()=>{
    </Paper>
   </Grid>
   <Grid item xs={10}>
-  {status?< ListOfDoctors pattern={pattern} setStatus={setStatus}/>:<></>}
+  {status?< ListOfDoctors pattern={pattern} setStatus={setStatus} hideAppBar={hideAppBar}/>:<></>}
   <Routes>
-          <Route element={<PatientLogin/>} path='/patientlogin'/>
-          <Route element={<ListOfDoctors/>} path='/listofdoctors'/>
-          <Route element={<SelectedDoctor/>} path='/selecteddoctor'/>
+          <Route element={<PatientLogin />} path='/patientlogin'/>
+          <Route element={<ListOfDoctors/>} path='/patientdashboard/listofdoctors'/>
+          <Route element={<SelectedDoctor hideAppBar={hideAppBar}/>} path='/selecteddoctor/*'/>
           <Route element={<PatientQuestioner/>} path='/patientquestioner'/>
   </Routes>
   </Grid>

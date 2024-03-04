@@ -2,7 +2,6 @@ import {useEffect,useState,} from 'react'
 import makeStyles from "@mui/styles/makeStyles";
 import MaterialTable from '@material-table/core';
 import { getData,postData } from '../Services/FetchDjangoServices';
-import * as React from 'react';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
@@ -30,9 +29,9 @@ const useStyles = makeStyles((theme) => ({
     padding: 15,
   },
     container: {
-        width: "100vw",
-        height: "100vh",
-        background: "#00cec9",
+        width: "81vw",
+        height: "89vh",
+        background: "#fff",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",

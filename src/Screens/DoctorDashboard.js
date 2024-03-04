@@ -15,7 +15,7 @@ import PatientDisplay from './PatientDisplay';
 import { imageURL } from '../Services/FetchDjangoServices';
 import Prescription from './Prescription';
 import PrescriptionDisplay from './DisplayPrescription';
-
+import TimingsInterface from "./TimingsInterface";
 export default function DoctorDashboard() {
   var Navigate = useNavigate()
   var doctor = JSON.parse(localStorage.getItem('DOCTOR'))
@@ -39,6 +39,14 @@ export default function DoctorDashboard() {
                   <LocalHospital />
                 </ListItemIcon>
                 <ListItemText primary="Subquestion" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton onClick={() => Navigate("/doctordashboard/timingsinterface")}>
+                <ListItemIcon>
+                  <LocalHospital />
+                </ListItemIcon>
+                <ListItemText primary="Timings" />
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
@@ -83,6 +91,7 @@ const sideBar = () => {
             <Route element={<PatientDisplay />} path='/patientdisplay' />
             <Route element={<Prescription />} path='/prescription' />
             <Route element={<PrescriptionDisplay />} path='/prescriptiondisplay' />
+            <Route element={<TimingsInterface/>} path='/timingsinterface'/>
           </Routes>
         </Grid>
       </Grid>

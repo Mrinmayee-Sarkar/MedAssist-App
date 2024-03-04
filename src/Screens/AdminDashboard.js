@@ -13,6 +13,8 @@ import DoctorsInterface from "./DoctorsInterface";
 import DisplayAll from "./DisplayAll";
 import PatientInterface from "./PatientInterface";
 import adminimage from "../Assets/abhay.jpeg"
+import DisplayTiming from "./DisplayTiming"
+import ScheduleIcon from '@mui/icons-material/Schedule';
 
 export default function AdminDashboard() {
   var Navigate = useNavigate()
@@ -36,6 +38,14 @@ export default function AdminDashboard() {
                   <PersonSearch />
                 </ListItemIcon>
                 <ListItemText primary="Patient" />
+              </ListItemButton >
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton onClick={() => Navigate("/admindashboard/displaytiming")}>
+                <ListItemIcon>
+                  <ScheduleIcon/>
+                </ListItemIcon>
+                <ListItemText primary="Doc Avail" />
               </ListItemButton >
             </ListItem>
           </List>
@@ -71,6 +81,7 @@ export default function AdminDashboard() {
             <Route element={<DoctorsInterface />} path="/doctorsinterface" />
             <Route element={<DisplayAll />} path="/displayall" />
             <Route element={<PatientInterface />} path='/patientinterface' />
+            <Route element={<DisplayTiming />} path="/displaytiming" />
           </Routes>
         </Grid>
       </Grid>

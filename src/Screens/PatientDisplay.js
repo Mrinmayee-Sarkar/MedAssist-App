@@ -28,7 +28,7 @@ const useStyles=makeStyles((theme)=>({
   },
   rootContainer:{
     width:"50vw",
-    height:"85vh",
+    height:"70vh",
     background:"#f2f2f2",
     display:"flex",
     justifyContent:"center",
